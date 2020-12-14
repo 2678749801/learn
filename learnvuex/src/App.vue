@@ -8,11 +8,6 @@
     <h2>{{$store.getters.fullname3}}</h2>
     <button @click="asyncUpdateName">异步修改</button>
     <h2>{{message}}</h2>
-    {{$store.state.counter}}
-    <button @click="addition">+</button>
-    <button @click="subtraction">-</button>
-    <button @click="addCount(5)">+5</button>
-    <button @click="addCount(10)">+10</button>
     <button @click="addStudent">+++</button>
     <h2>{{$store.state.info}}</h2>
     <button @click="updateInfo">修改信息</button>
@@ -21,7 +16,14 @@
     <h2>{{$store.getters.more20stu}}</h2>
     <h2>{{$store.getters.moreAgestu(8)}}</h2>
     <h2>----------mutation---------</h2>
+    <h2>----------------hellovuex-----------</h2>
     <hello-vuex/>
+    <h2>----------------APP--------</h2>
+    {{$store.state.counter}}
+    <button @click="addition">+</button>
+    <button @click="subtraction">-</button>
+    <button @click="addCount(5)">+5</button>
+    <button @click="addCount(10)">+10</button>
   </div>
 </template>
 
@@ -40,6 +42,7 @@ export default {
   methods: {
     addition(){
       this.$store.commit(INCREMENT)
+      
     },
     subtraction(){
       this.$store.commit('decrement')

@@ -16,3 +16,10 @@ object.defineProperty 来监听对象属性的改变
 2.当数据发生改变时 vue是如何知道要通知哪些人 界面发生刷新
 发布订阅者模式
 */
+//routeLink
+//添加tag="button" 可以渲染成按钮 
+//replace不能返回 
+//active class 改变路由的活跃class
+//create 组件被创建出来 调用
+//mounted 挂在到dom上的时候
+//updated 刷新的时候回调

@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App'
 import axios from 'axios'
+import router from './router/index'
 import { request } from './network/request'
 
 Vue.config.productionTip = false
@@ -9,8 +10,10 @@ Vue.config.productionTip = false
 new Vue({
     el: '#app',
     axios,
+    router,
     render: h => h(App)
 })
+
 axios.defaults.baseURL = 'http://152.136.185.210:8000'
 axios.defaults.timeout = 5000
     //基本使用
@@ -37,6 +40,7 @@ axios({
     //         console.log(results)
     //     })
     //优化代码
+
 axios.all([axios({
         url: '/api/w6/home/multidata',
     }), axios({
@@ -51,6 +55,7 @@ axios.all([axios({
         console.log(res2)
     }))
     //创建axios实例
+
 const instance1 = axios.create({
     baseURL: 'http://152.136.185.210:8000',
     timeout: 5000
