@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="btnClick1">按钮1</button>
+        <!--没有参数省略括号-->
+        <button @click="btnClick2">按钮2</button>
+        <!--在定义事件时 写函数省略了小括号 但是方法本身需要参数 这个时候会默认将浏览器生成的event事件作为参数传递到方法-->
+        <button @click="btnClick3(123,$event)">按钮3</button>
+        <button>按钮4</button>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊',
+            },
+            methods: {
+                btnClick1() {
+                    console.log("btnClick1")
+                },
+                btnClick2(abc) {
+                    console.log(abc, '----')
+                }
+            },
+            btnClick3(abc, event) {
+                console.log(abc, '----', event)
+            }
+        })
+    </script>
+</body>
+
+</html>

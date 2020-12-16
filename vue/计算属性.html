@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{firstName+' '+lastName}}</h2>
+        <h2>{{getFullName()}}</h2>
+        <h2>{{fullName}}</h2>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const app = new Vue({
+                el: '#app',
+                data: {
+                    message: '你好啊',
+                    firstName: 'LeB',
+                    lastName: 'James'
+                },
+                computed: {
+                    fullName() {
+                        return this.firstName + ' ' + this.lastName
+                    } //计算属性一般没有set方法 只读属性
+                },
+                methods: {
+                    getFullName() {
+                        return this.firstName + '' + this.lastName //
+                    }
+                },
+            })
+            //v-0n 不需要传参的时候  （）可以不添加
+            //在定义事件时 写方法缩略了（）但是方法本身需要一个参数 这个时候 Vue会默认将浏览器产生的event事件对象作参数传入到方法
+            //既需要event又需要其他参数的时候 在调用方法时 需要手动获取到浏览器参数的event对象 用$event
+            //.stop 点击按钮 不会触发 
+            //。prevent 阻止默认事件提交
+            //。监听某个键盘的点击
+            //。native 监听组件根元素的原生事件
+            //。once 只触发一次回调
+    </script>
+</body>
+
+</html>

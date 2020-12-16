@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="item in names">{{item}}</li>
+            <!--遍历过程中 没有使用索引值（下标值）-->
+        </ul>
+        <ul>
+            <li v-for="(item,index) in names">
+                {{index+1}},{{item}}
+            </li>
+        </ul>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                names: ['why', 'asd0', '1w2', 'dck']
+            }
+        })
+    </script>
+</body>
+
+</html>

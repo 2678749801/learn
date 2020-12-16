@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <div @click="divClick">
+            aaaaaa
+            <button @click.stop="btnClick">按钮</button>
+        </div>
+    </div>
+    <script src="../vue.js"></script>
+    <script>
+        //.prevent阻止默认事件提交 .native 监听组件根元素的原生事件 .once 只触发一次回调  .{keycode|keyAlias} 特定按键触发
+
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊',
+            },
+            methods: {
+                btnClick() {
+                    console.log("btnClick")
+                },
+                divClick() {
+                    console.log("divClick")
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

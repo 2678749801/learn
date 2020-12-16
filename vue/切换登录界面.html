@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <span v-if="isUser">
+          <label for="username">用户账号</label>
+          <input type="text" id="username" placeholder="用户账号">
+        </span>
+        <span v-else="">
+          <label for="email">用户账号</label>
+          <input type="text" id="email">
+        </span>
+        <button @click="isUser=!isUser">切换类型</button>
+    </div>
+    <script src="vue.js"></script>
+    <script>
+        const app = new Vue({
+                el: '#app',
+                data: {
+                    isUser: true
+                }
+            }) //v-if 当条件为false时 包含v-if指令的元素 根本就不会存在dom中
+            //v-show当条件为false时 v-show只是给我们一个行内样式  display：none
+            //在需要显示与掩藏之间切换很频繁时 使用v-show
+            //当只有一次切换时 经常使用v-if
+    </script>
+</body>
+
+</html>
