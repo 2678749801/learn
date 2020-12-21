@@ -1,16 +1,16 @@
 import axios from 'axios'
-export function request(config, success, failure) {
-    const instance = axios.create({
-        baseurl: "",
-        timeout: "1111"
-    })
-    instance(config).then(res => {
-            success(res)
-        })
-        .catch(err => {
-            failure(err)
-        })
-}
+// export function request(config, success, failure) {
+//     const instance = axios.create({
+//         baseurl: "",
+//         timeout: "1111"
+//     })
+//     instance(config).then(res => {
+//             success(res)
+//         })
+//         .catch(err => {
+//             failure(err)
+//         })
+// }
 //方案1
 // export function request(config, success, failure) {
 //     //1.创建实例
